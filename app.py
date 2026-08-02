@@ -16,8 +16,8 @@ def sitemap():
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://seekhocoding.online/</loc>
-        <loc>https://seekhocoding.online/python/chapter/1/</loc>
+        <loc>https://second-website-ohwa.onrender.com/</loc>
+        <loc>https://second-website-ohwa.onrender.com/chapter1</loc>
     </url>
 
  </urlset>
@@ -26,29 +26,12 @@ def sitemap():
  
 @app.route('/')
 def home(): 
-    return render_template('/python/chapters/index2.html')
-
-@app.route('/chapter1')
-def chapter1(): 
     return render_template('/python/chapters/index1.html')
 
-
-# erros
-
-@app.errorhandler(404)
-def page_not_found(error): 
-    return render_template('errors/error.html', 
-                           error_code="404", 
-                           error_message="Sorry, the page you are looking for is not available at this time. Please check the URL or visit the main page."), 404
+@app.route('/chapter2')
+def chapter2(): 
+    return render_template('/python/chapters/index2.html')
  
-@app.errorhandler(Exception)
-def handle_all_exceptions(error): 
-    app.logger.error(f"Unhandled Exception Occurred: {error}")
-      
-    return render_template('errors/error.html', 
-                           error_code="500", 
-                           error_message="This page is unable to open due to a temporary system issue. Our team will fix it soon."), 500
-
 # git status
 # git add .
 # git commit -m "Project updated with new features"

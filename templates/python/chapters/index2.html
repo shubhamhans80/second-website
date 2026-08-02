@@ -1,444 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Python Free Online - SeekhoCoding</title>
-
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
-    <link href="https://googleapis.com" rel="stylesheet">
-<meta name="google-site-verification" content="6gJAVJGoWpSkKO0UwHmOLou4g06J_Vzm8ivFUhpkwEw" />
+    <title>Variables and Data Types</title>
     <style>
-        /* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
-    scroll-behavior: smooth;
-}
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
 
-/* Header & Navbar */
-header {
-    background-color: #1e1e2f;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
 
-.logo {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 700;
-}
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-.logo span {
-    color: #ffde59;
-}
+        /* Card Section */
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
+        h2 {
+            color: #1e3c72;
+            border-bottom: 2px solid #2a5298;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
 
-.nav-links li {
-    margin-left: 20px;
-}
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
 
-.nav-links a {
-    color: #ddd;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
+        /* Lists */
+        ul {
+            list-style-type: none;
+            margin-bottom: 15px;
+        }
 
-.nav-links a:hover {
-    color: #ffde59;
-}
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
 
-.btn-nav {
-    background: #ffde59;
-    color: #1e1e2f !important;
-    padding: 8px 16px;
-    border-radius: 4px;
-}
+        ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-weight: bold;
+        }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-}
+        /* Code Box */
+        .code-box {
+            background-color: #2d3748;
+            color: #f7fafc;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 5px solid #38b2ac;
+        }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
 
-.hero .highlight {
-    color: #ffde59;
-}
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2a5298;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
 
-.hero p {
-    font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    color: #ccc;
-}
+        .btn:hover {
+            background-color: #1e3c72;
+        }
 
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: transform 0.2s;
-}
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e3c72;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
 
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn-primary {
-    background-color: #ffde59;
-    color: #1e1e2f;
-}
-
-.btn-secondary {
-    border: 2px solid #fff;
-    color: #fff;
-}
-
-/* Features Section */
-.features {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    width: 60px;
-    height: 4px;
-    background: #ffde59;
-    display: block;
-    margin: 10px auto 0 auto;
-    border-radius: 2px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1max));
-    gap: 30px;
-}
-
-.card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    border-top: 4px solid #1e1e2f;
-}
-
-.card .icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-/* Curriculum Section (Accordion) */
-.modules-section {
-    background-color: #f1f3f5;
-    padding: 80px 0;
-}
-
-.accordion {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.accordion-item {
-    background: #fff;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.accordion-header {
-    background: #1e1e2f;
-    color: #fff;
-    padding: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.accordion-body {
-    padding: 20px;
-    display: none;
-    background: #fff;
-    border-top: 1px solid #eee;
-}
-
-/* Enrollment Section */
-.enroll-section {
-    padding: 80px 0;
-    background: #fff;
-}
-
-.enroll-box {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    background: #f8f9fa;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-.enroll-box h2 {
-    margin-bottom: 10px;
-}
-
-.enroll-box p {
-    margin-bottom: 30px;
-    color: #666;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.btn-submit {
-    background: #1e1e2f;
-    color: #fff;
-    width: 100%;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-}
-
-.btn-submit:hover {
-    background: #2d2d44;
-}
-
-.success-message {
-    display: none;
-    margin-top: 20px;
-    color: #2b8a3e;
-    font-weight: 600;
-    background: #d3f9d8;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-/* Footer */
-footer {
-    background: #1e1e2f;
-    color: #888;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-}
-
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            section { padding: 20px; }
+            .nav-buttons { flex-direction: column; gap: 15px; }
+            .btn { text-align: center; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header Section -->
     <header>
-        <div class="navbar container">
-            <div class="logo">🐍 Python<span>Hub</span></div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#modules">Curriculum</a></li>
-                    <li><a href="#enroll" class="btn-nav">Enroll Now</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>चैप्टर 2: पायथन वैरिएबल्स और डेटा टाइप्स</h1>
+        <p>Python Variables and Data Types in Hindi</p>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <h1>Master Python Programming <br><span class="highlight">100% Free!</span></h1>
-            <p>Zero experience required. Go from absolute beginner to building advanced applications, data analysis models, and automation scripts today.</p>
-            <div class="hero-buttons">
-                <a href="#modules" class="btn btn-primary">Start Learning</a>
-                <a href="#enroll" class="btn btn-secondary">Claim Free Access</a>
-            </div>
-        </div>
-    
+    <!-- Main Content Container -->
+    <div class="container">
 
-    <!-- Features Section -->
-    <section id="features" class="features container">
-        <h2 class="section-title">Why Learn With Us?</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="icon">🚀</div>
-                <h3>Beginner Friendly</h3>
-                <p>Hum bilkul basic level (variables, loops) se shuru karke advanced level tak le jayenge.</p>
+        <!-- What is a Variable -->
+        <section>
+            <h2>पायथन वैरिएबल्स (Variables) क्या हैं?</h2>
+            <p>वैरिएबल्स एक प्रकार के कंटेनर (Containers) होते हैं जिनका उपयोग डेटा या वैल्यूज को कंप्यूटर मेमोरी में स्टोर करने के लिए किया जाता है।</p>
+            <p>दूसरी भाषाओं (जैसे C++ या Java) की तरह पायथन में वेरिएबल डिक्लेअर करते समय उसका टाइप बताने की जरूरत नहीं होती। पायथन डेटा को देखकर खुद समझ जाता है कि वह किस टाइप का है।</p>
+            
+            <div class="code-box">
+                x = <span style="color: #f6ad55;">5</span> <span style="color: #ecc94b;"># यहाँ x एक इंटीजर वेरिएबल है</span><br>
+                name = <span style="color: #9ae6b4;">"Rahul"</span> <span style="color: #ecc94b;"># यहाँ name एक स्ट्रिंग वेरिएबल है</span><br>
+                <span style="color: #63b3ed;">print</span>(x)<br>
+                <span style="color: #63b3ed;">print</span>(name)
             </div>
-            <div class="card">
-                <div class="icon">💻</div>
-                <h3>Practical Projects</h3>
-                <p>Har module ke baad real-world mini projects aur hands-on coding exercises.</p>
-            </div>
-            <div class="card">
-                <div class="icon">📜</div>
-                <h3>Free Certificate</h3>
-                <p>Poora course complete karne ke baad aapko free validation certificate milega.</p>
-            </div>
-        </div>
-    
+        
 
-    <!-- Curriculum Modules Section -->
-    <section id="modules" class="modules-section">
-        <div class="container">
-            <h2 class="section-title">Course Curriculum</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <div class="accordion-header">Module 1: Basics & Setup <span>+</span></div>
-                    <div class="accordion-body">
-                        <p>Python Installation, Variables, Data Types (Strings, Numbers), and Basic Inputs/Outputs.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">Module 2: Control Flow & Loops <span>+</span></div>
-                    <div class="accordion-body">
-                        <p>If-Else statements, Elif, For loops, While loops, and logical operators.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">Module 3: Functions & Data Structures <span>+</span></div>
-                    <div class="accordion-body">
-                        <p>Defining Functions, Lists, Dictionaries, Tuples, Sets, and Scope.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">Module 4: Advanced OOP & Projects <span>+</span></div>
-                    <div class="accordion-body">
-                        <p>Object-Oriented Programming (Classes, Inheritance), File Handling, and a Capstone Project.</p>
-                    </div>
-                </div>
+        <!-- Data Types in Python -->
+        <section>
+            <h2>पायथन में डेटा टाइप्स (Data Types)</h2>
+            <p>डेटा टाइप यह बताता है कि किसी वेरिएबल में किस प्रकार का डेटा स्टोर किया गया है। पायथन में मुख्य रूप से निम्नलिखित डेटा टाइप्स होते हैं:</p>
+            <ul>
+                <li><strong>Numeric Types:</strong> इसमें नंबर स्टोर होते हैं। जैसे `int` (पूर्ण संख्या जैसे 10, -5) और `float` (दशमलव वाली संख्या जैसे 10.5)।</li>
+                <li><strong>Text Type (str):</strong> इसमें टेक्स्ट या शब्दों को स्टोर किया जाता है। इसे हमेशा सिंगल या डबल कोट्स के अंदर लिखा जाता है (जैसे: "Hello")।</li>
+                <li><strong>Boolean Type (bool):</strong> इसमें केवल दो ही वैल्यूज हो सकती हैं — `True` (सही) या `False` (गलत)।</li>
+                <li><strong>Sequence Types:</strong> एक से ज्यादा डेटा को एक साथ स्टोर करने के लिए `list`, `tuple` और `range` का इस्तेमाल होता है।</li>
+            </ul>
+        
+
+        <!-- Code Example for Data Types -->
+        <section>
+            <h2>डेटा टाइप्स का उदाहरण</h2>
+            <p>नीचे दिए गए कोड में अलग-अलग डेटा टाइप्स को दिखाया गया है:</p>
+            
+            <div class="code-box">
+                age = <span style="color: #f6ad55;">25</span> <span style="color: #ecc94b;"># int</span><br>
+                price = <span style="color: #f6ad55;">99.99</span> <span style="color: #ecc94b;"># float</span><br>
+                is_coding = <span style="color: #63b3ed;">True</span> <span style="color: #ecc94b;"># bool</span><br>
+                fruits = [<span style="color: #9ae6b4;">"apple"</span>, <span style="color: #9ae6b4;">"banana"</span>] <span style="color: #ecc94b;"># list</span><br>
+                <br>
+                <span style="color: #ecc94b;"># type() फंक्शन से आप किसी भी वेरिएबल का डेटा टाइप जान सकते हैं</span><br>
+                <span style="color: #63b3ed;">print</span>(<span style="color: #63b3ed;">type</span>(age)) <span style="color: #ecc94b;"># Output: &lt;class 'int'&gt;</span>
             </div>
-        </div>
-    
+        
 
-    <!-- Enrollment Form Section -->
-    <section id="enroll" class="enroll-section">
-        <div class="container enroll-box">
-            <h2>Join the Free Python Course</h2>
-            <p>Apna naam aur email dalein aur turant saare modules ka free access paiye.</p>
-            <form id="enrollForm">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Enter Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Enter Email Address" required>
-                </div>
-                <button type="submit" class="btn btn-submit">Get Instant Access</button>
-            </form>
-            <div id="formSuccess" class="success-message">🎉 Congratulations! Access link sent to your email.</div>
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="index.html" class="btn">&larr; पिछला चैप्टर (Chapter 1)</a>
+            <a href="#" class="btn" style="opacity: 0.5; pointer-events: none;">अगला चैप्टर Coming Soon &rarr;</a>
         </div>
-    
 
-    <!-- Footer -->
+    </div>
+
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2026 PythonHub. Built with ❤️ for developers.</p>
+        <p>&copy; 2026 आपकी वेबसाइट का नाम। सर्वाधिकार सुरक्षित।</p>
     </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    
-    // 1. Accordion / Curriculum Toggle Logic
-    const accordionHeaders = document.querySelectorAll(".accordion-header");
-
-    accordionHeaders.forEach(header => {
-        header.addEventListener("click", function() {
-            const body = this.nextElementSibling;
-            const icon = this.querySelector("span");
-
-            // Open or close current item
-            if (body.style.display === "block") {
-                body.style.display = "none";
-                icon.textContent = "+";
-            } else {
-                body.style.display = "block";
-                icon.textContent = "-";
-            }
-        });
-    });
-
-    // 2. Free Course Enrollment Form Submission
-    const enrollForm = document.getElementById("enrollForm");
-    const successMessage = document.getElementById("formSuccess");
-
-    enrollForm.addEventListener("submit", function(e) {
-        e.preventDefault(); // Default refresh rokne ke liye
-
-        const userName = document.getElementById("name").value;
-        const userEmail = document.getElementById("email").value;
-
-        // Yahan aap apna backend API integration kar sakte hain.
-        console.log(`Enrolled User: ${userName}, Email: ${userEmail}`);
-
-        // Success message show karna aur form clear karna
-        successMessage.style.display = "block";
-        enrollForm.reset();
-
-        // 5 seconds baad success message chupani hai toh:
-        setTimeout(() => {
-            successMessage.style.display = "none";
-        }, 5000);
-    });
-});
-
-</script>
 </body>
 </html>

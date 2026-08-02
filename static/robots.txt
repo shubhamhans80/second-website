@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://seekhocoding.online/
+Sitemap: https://second-website-ohwa.onrender.com/
