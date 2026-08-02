@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Python</title>
+    <!-- static फ़ोल्डर से CSS लिंक -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta name="google-site-verification" content="6gJAVJGoWpSkKO0UwHmOLou4g06J_Vzm8ivFUhpkwEw" />
+    
+    <style>
+        /* कोड बॉक्स और लिस्ट के लिए अतिरिक्त स्टाइलिंग */
+        .code-box { background-color: #2d3748; color: #f7fafc; padding: 20px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; overflow-x: auto; margin: 20px 0; border-left: 5px solid #38b2ac; }
+        ul { list-style-type: none; margin-bottom: 15px; }
+        ul li { position: relative; padding-left: 25px; margin-bottom: 10px; }
+        ul li::before { content: "✔"; position: absolute; left: 0; color: #3498db; font-weight: bold; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 40px; }
+        @media (max-width: 600px) { .nav-buttons { flex-direction: column; gap: 15px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>चैप्टर 2: पायथन का परिचय</h1>
+        <p>Introduction to Python Language in Hindi</p>
+    </header>
+
+    <div class="container">
+        <section style="box-shadow: none; padding: 0; margin-bottom: 30px;">
+            <h2>पायथन (Python) क्या है?</h2>
+            <p>पायथन एक बहुत ही लोकप्रिय, हाई-लेवल (High-Level) और जनरल पर्पज प्रोग्रामिंग लैंग्वेज है। इसका आविष्कार <strong>Guido van Rossum</strong> ने किया था और इसे पहली बार 1991 में रिलीज किया गया था।</p>
+            <p>पायथन को इस तरह से डिजाइन किया गया है कि इसके कोड को पढ़ना और समझना बेहद आसान होता है।</p>
+        
+
+        <section style="box-shadow: none; padding: 0; margin-bottom: 30px;">
+            <h2>पायथन की मुख्य विशेषताएँ</h2>
+            <ul>
+                <li><strong>सीखने में आसान:</strong> सिंटैक्स सरल है।</li>
+                <li><strong>ओपन सोर्स (Open Source):</strong> पूरी तरह से फ्री है।</li>
+                <li><strong>क्रॉस-प्लेटफॉर्म:</strong> हर सिस्टम पर चलता है।</li>
+                <li><strong>बड़ा कम्युनिटी सपोर्ट:</strong> सीखने में मदद मिलती है।</li>
+            </ul>
+        
+
+        <section style="box-shadow: none; padding: 0; margin-bottom: 30px;">
+            <h2>पहला पायथन प्रोग्राम (Hello World)</h2>
+            <p>सिर्फ एक लाइन के कोड से "Hello, World!" प्रिंट किया जा सकता है:</p>
+            <div class="code-box">
+                <span style="color: #63b3ed;">print</span>(<span style="color: #9ae6b4;">"Hello, World!"</span>)
+            </div>
+        
+
+        <section style="box-shadow: none; padding: 0; margin-bottom: 30px;">
+            <h2>पायथन का उपयोग कहाँ होता है?</h2>
+            <ul>
+                <li>वेब डेवलपमेंट (Django, Flask)</li>
+                <li>AI और मशीन लर्निंग</li>
+                <li>डाटा एनालिसिस और साइंस</li>
+                <li>ऑटोमेशन (Scripting)</li>
+            </ul>
+        
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="{{ url_for('home') }}" class="btn">&larr; मुख्य होम पेज पर जाएं</a>
+            <a href="#" class="btn" style="opacity: 0.5; pointer-events: none;">अगला चैप्टर (Chapter 2) जल्द ही &rarr;</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 आपकी वेबसाइट का नाम। सर्वाधिकार सुरक्षित।</p>
+    </footer>
+
+</body>
+</html>

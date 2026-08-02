@@ -3,24 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>मेरा पहला Flask ऐप</title>
-    <!-- static फ़ोल्डर से CSS लिंक करने का सही तरीका -->
+    <title>learn python free</title>
+    <!-- static फ़ोल्डर से CSS लिंक -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <meta name="google-site-verification" content="6gJAVJGoWpSkKO0UwHmOLou4g06J_Vzm8ivFUhpkwEw" />
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
-        <h1>स्वागत है मेरे Flask ऐप पर!</h1>
-        <p>यह पायथन और फ्लास्क की मदद से बनाया गया एक सिंपल वेबपेज है।</p>
+        <h1>पायथन प्रोग्रामिंग सीखें हिंदी में</h1>
+        <p>शुरुआत से लेकर एडवांस लेवल तक का पूरा कोर्स बिल्कुल फ्री</p>
     </header>
 
+    <!-- Main Content Container -->
     <div class="container">
-        <h2>मुख्य जानकारी</h2>
-        <p>Flask एक माइक्रो वेब फ्रेमवर्क है जो बहुत ही हल्का (lightweight) और तेज़ है।</p>
         
-        <!-- दूसरे पेज पर जाने के लिए लिंक -->
-        <a href="{{ url_for('about') }}" class="btn">हमारे बारे में जानें &rarr;</a>
+        <!-- Welcome Message -->
+        <section style="box-shadow: none; padding: 0; margin-bottom: 40px;">
+            <h2>कोर्स में आपका स्वागत है!</h2>
+            <p>आज के समय में पायथन दुनिया की सबसे लोकप्रिय प्रोग्रामिंग भाषाओं में से एक है। चाहे आप डेटा साइंस सीखना चाहते हों, वेब डेवलपमेंट करना चाहते हों या फिर मशीन लर्निंग, पायथन हर जगह काम आती है।</p>
+            <p>हमने इस कोर्स को इस तरह डिज़ाइन किया है कि अगर आपको पहले से कोडिंग नहीं आती, तो भी आप इसे बेहद आसानी से सीख सकेंगे।</p>
+        
+
+        <!-- Course Syllabus / Index -->
+        <section style="box-shadow: none; padding: 0;">
+            <h2>कोर्स के मुख्य चैप्टर्स:</h2>
+            <div style="margin: 20px 0;">
+                <div style="background: #eef2f7; padding: 15px; border-radius: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong style="color: #2c3e50;">चैप्टर 1: पायथन का परिचय</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #555;">पायथन क्या है, इसकी विशेषताएँ और पहला प्रोग्राम।</p>
+                    </div>
+                    <!-- यहाँ से चैप्टर 1 (index2.html) का लिंक है -->
+                    <a href="/pchapter2" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">पढ़ना शुरू करें &rarr;</a>
+                </div>
+
+                <div style="background: #eef2f7; padding: 15px; border-radius: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; opacity: 0.7;">
+                    <div>
+                        <strong style="color: #2c3e50;">चैप्टर 2: वैरिएबल्स और डेटा टाइप्स</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #555;">डेटा को मेमोरी में स्टोर करना और उनके प्रकार।</p>
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: bold; color: #7f8c8d;">जल्द आ रहा है</span>
+                </div>
+            </div>
+        
+
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 आपकी वेबसाइट का नाम। सर्वाधिकार सुरक्षित।</p>
+    </footer>
 
 </body>
 </html>
