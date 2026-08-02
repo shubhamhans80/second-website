@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मेरा पहला Flask ऐप</title>
+    <!-- static फ़ोल्डर से CSS लिंक करने का सही तरीका -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>स्वागत है मेरे Flask ऐप पर!</h1>
+        <p>यह पायथन और फ्लास्क की मदद से बनाया गया एक सिंपल वेबपेज है।</p>
+    </header>
+
+    <div class="container">
+        <h2>मुख्य जानकारी</h2>
+        <p>Flask एक माइक्रो वेब फ्रेमवर्क है जो बहुत ही हल्का (lightweight) और तेज़ है।</p>
+        
+        <!-- दूसरे पेज पर जाने के लिए लिंक -->
+        <a href="{{ url_for('about') }}" class="btn">हमारे बारे में जानें &rarr;</a>
+    </div>
+
+</body>
+</html>

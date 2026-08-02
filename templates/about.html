@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>हमारे बारे में</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>हमारे बारे में (About Us)</h1>
+    </header>
+
+    <div class="container">
+        <h2>यह पेज क्यों बनाया गया?</h2>
+        <p>यह पेज आपको दिखाने के लिए बनाया गया है कि Flask में एक पेज से दूसरे पेज पर नेविगेट कैसे करते हैं।</p>
+        <a href="{{ url_for('home') }}" class="btn">&larr; होम पेज पर वापस जाएं</a>
+    </div>
+
+</body>
+</html>
